@@ -33,7 +33,7 @@ $ResponsiveTopEcho=Setting::Get('ResponsiveTop', 'social_share');
 	
 	<div class="panel-body">
 		<?php
-			echo Yii::t('SocialShareModule.base','Paste a link to a post in which you shared the our website, or some of our other content..'); 
+			echo Yii::t('SocialShareModule.base','Paste a link to a post in which you shared our website, or some of our other content..'); 
 			echo '<br><br>';
 			echo Yii::t('SocialShareModule.base','And get points for each new link you share!'); 
 		

@@ -20,7 +20,7 @@ return array (
 	'Shared Link'=>'Geteilter Link',
 	'Date Created'=>'Datum erstellt',
 	'Show You Share!'=>'Zeigen Sie, dass Sie teilen!',
-	'Paste a link to a post in which you shared the WIA website, or some other content from Women In Africa..'=>'Fügen Sie einen Link zu einem Beitrag ein, in dem Sie die WIA-Website oder andere Inhalte von Women In Africa geteilt haben.',
+	'Paste a link to a post in which you shared our website, or some of our other content..'=>'Fügen Sie einen Link zu einem Beitrag ein, in dem Sie unsere Website oder einige unserer anderen Inhalte geteilt haben..',
 	'And get points for each new link you share!'=>'Und erhalten Sie Punkte für jeden neuen Link, den Sie teilen!',
 	'Paste the link below'=>'Fügen Sie den unten stehenden Link ein',
 	'Submit'=>'Einreichen',

@@ -1,0 +1,19 @@
+{
+	"id": "social_share",
+	"name": "Social Share",
+	"homepage": "https://github.com/petersphilo/humhub-social_share",
+	"authors": [{
+		"name": "Peter Zieseniss",
+		"homepage": "zconsulting.net",
+		"role": "The Alpha, The Omega - just kidding; it's just me.."
+		}],
+	"description": "This module allows people to post share links and be counted",
+	"keywords": [
+		"users", "share"
+		],
+	"version": "1.0.0",
+	"humhub": {
+		"minVersion": "1.12.0"
+		},
+	"screenshots": ["assets/screen-1.jpg","assets/screen-2.jpg"]
+}

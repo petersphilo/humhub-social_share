@@ -40,10 +40,10 @@ class ConfigController extends \humhub\modules\admin\components\Controller {
 			$SocShareFrom->SISortOrder = $social_share->settings->get('SISortOrder');
 			$SocShareFrom->PreviewMaxRows = $social_share->settings->get('PreviewMaxRows');
 			if ($SocShareFrom->load(Yii::$app->request->post()) && $SocShareFrom->validate()) {
-				$SocShareFrom->theGroups = $social_share->settings->set('theGroups', Json::encode($SocShareFrom->theGroups));;
-				$SocShareFrom->ResponsiveTop = $social_share->settings->set('ResponsiveTop', $SocShareFrom->ResponsiveTop);;
-				$SocShareFrom->SISortOrder = $social_share->settings->set('SISortOrder', $SocShareFrom->SISortOrder);;
-				$SocShareFrom->PreviewMaxRows = $social_share->settings->set('PreviewMaxRows', $SocShareFrom->PreviewMaxRows);;
+				$SocShareFrom->theGroups = $social_share->settings->set('theGroups', Json::encode($SocShareFrom->theGroups));
+				$SocShareFrom->ResponsiveTop = $social_share->settings->set('ResponsiveTop', $SocShareFrom->ResponsiveTop);
+				$SocShareFrom->SISortOrder = $social_share->settings->set('SISortOrder', $SocShareFrom->SISortOrder);
+				$SocShareFrom->PreviewMaxRows = $social_share->settings->set('PreviewMaxRows', $SocShareFrom->PreviewMaxRows);
 				return $this->redirect(['/social_share/config/config']);
 				}
 

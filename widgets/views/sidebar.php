@@ -8,8 +8,10 @@ use humhub\modules\user\models\User;
 use Yii;
 use yii\helpers\Json;
 
-$theGroupsEcho=Json::decode(Setting::Get('theGroups', 'social_share'));
-$ResponsiveTopEcho=Setting::Get('ResponsiveTop', 'social_share');
+$social_share=Yii::$app->getModule('social_share'); 
+
+$theGroupsEcho=Json::decode($social_share->settings->get('theGroups'));
+$ResponsiveTopEcho=$social_share->settings->get('ResponsiveTop');
 
 
 ?>

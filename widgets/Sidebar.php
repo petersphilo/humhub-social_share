@@ -15,7 +15,9 @@ class Sidebar extends Widget
 
 	public function run()
 	{
-		$AuthorizedGroupArr=Json::decode(Setting::Get('theGroups', 'social_share')); 
+		$social_share=Yii::$app->getModule('social_share'); 
+		
+		$AuthorizedGroupArr=Json::decode($social_share->settings->get('theGroups')); 
 		if(is_int($AuthorizedGroupArr)){$AuthorizedGroupArr=[$AuthorizedGroupArr]; }
 		$userID=Yii::$app->user->id;
 		

@@ -32,16 +32,18 @@ class ConfigController extends \humhub\modules\admin\components\Controller {
 	public function actionConfig(){
 		if(Yii::$app->request->get('SocShareDL')){$this->MyDataRequest(); }
 		else{
+			$social_share=Yii::$app->getModule('social_share'); 
+			
 			$SocShareFrom = new ConfigureForm();
-			$SocShareFrom->theGroups = Json::decode(Setting::Get('theGroups', 'social_share'));
-			$SocShareFrom->ResponsiveTop = Setting::Get('ResponsiveTop', 'social_share');
-			$SocShareFrom->SISortOrder = Setting::Get('SISortOrder', 'social_share');
-			$SocShareFrom->PreviewMaxRows = Setting::Get('PreviewMaxRows', 'social_share');
+			$SocShareFrom->theGroups = Json::decode($social_share->settings->get('theGroups'));
+			$SocShareFrom->ResponsiveTop = $social_share->settings->get('ResponsiveTop');
+			$SocShareFrom->SISortOrder = $social_share->settings->get('SISortOrder');
+			$SocShareFrom->PreviewMaxRows = $social_share->settings->get('PreviewMaxRows');
 			if ($SocShareFrom->load(Yii::$app->request->post()) && $SocShareFrom->validate()) {
-				$SocShareFrom->theGroups = Setting::Set('theGroups', Json::encode($SocShareFrom->theGroups), 'social_share');
-				$SocShareFrom->ResponsiveTop = Setting::Set('ResponsiveTop', $SocShareFrom->ResponsiveTop, 'social_share');
-				$SocShareFrom->SISortOrder = Setting::Set('SISortOrder', $SocShareFrom->SISortOrder, 'social_share');
-				$SocShareFrom->PreviewMaxRows = Setting::Set('PreviewMaxRows', $SocShareFrom->PreviewMaxRows, 'social_share');
+				$SocShareFrom->theGroups = $social_share->settings->set('theGroups', Json::encode($SocShareFrom->theGroups));;
+				$SocShareFrom->ResponsiveTop = $social_share->settings->set('ResponsiveTop', $SocShareFrom->ResponsiveTop);;
+				$SocShareFrom->SISortOrder = $social_share->settings->set('SISortOrder', $SocShareFrom->SISortOrder);;
+				$SocShareFrom->PreviewMaxRows = $social_share->settings->set('PreviewMaxRows', $SocShareFrom->PreviewMaxRows);;
 				return $this->redirect(['/social_share/config/config']);
 				}
 

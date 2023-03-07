@@ -23,9 +23,9 @@ class Module extends \humhub\components\Module
 		if (Yii::$app->hasModule('social_share')) {
 			
 			$SISortOrderSet=800; 
-			/**/
-			if (Setting::Get('SISortOrder', 'social_share') >= 0) {
-				$SISortOrderSet = Setting::Get('SISortOrder', 'social_share'); 
+			$social_share=Yii::$app->getModule('social_share'); 
+			if ($social_share->settings->get('SISortOrder') >= 0) {
+				$SISortOrderSet = $social_share->settings->get('SISortOrder'); 
 				}
 			
 			$event->sender->addWidget(widgets\Sidebar::className(), array(), array('sortOrder' => intval($SISortOrderSet)));
@@ -42,18 +42,19 @@ class Module extends \humhub\components\Module
 	public function enable()
 	{
 		parent::enable();
+		
 
-		if (Setting::Get('theGroups', 'social_share') == '') {
-			Setting::Set('theGroups', 0, 'social_share'); 
+		if ($social_share->settings->get('theGroups') == '') {
+			$social_share->settings->set('theGroups', 0); 
 			}
-		if (Setting::Get('ResponsiveTop', 'social_share') == '') {
-			Setting::Set('ResponsiveTop', 0, 'social_share'); 
+		if ($social_share->settings->get('ResponsiveTop') == '') {
+			$social_share->settings->set('ResponsiveTop', 0); 
 			}
-		if (Setting::Get('SISortOrder', 'social_share') == '') {
-			Setting::Set('SISortOrder', 160, 'social_share'); 
+		if ($social_share->settings->get('SISortOrder') == '') {
+			$social_share->settings->set('SISortOrder', 160); 
 			}
-		if (Setting::Get('PreviewMaxRows', 'social_share') == '') {
-			Setting::Set('PreviewMaxRows', 50, 'social_share'); 
+		if ($social_share->settings->get('PreviewMaxRows') == '') {
+			$social_share->settings->set('PreviewMaxRows', 50); 
 			}
 		}
 	

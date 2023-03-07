@@ -15,7 +15,9 @@ use humhub\models\Setting;
  * @var $model \humhub\modules\social_share\models\ConfigureForm
  */
 
-$ReadtheGroups=Json::decode(Setting::Get('theGroups', 'social_share'));
+$social_share=Yii::$app->getModule('social_share'); 
+
+$ReadtheGroups=Json::decode($social_share->settings->get('theGroups'));
 if(is_int($ReadtheGroups)){$ReadtheGroups=[$ReadtheGroups]; }
 $GettheGroupName_cmd=Yii::$app->db->createCommand("SELECT name FROM `group` WHERE id=:Gid;"); 
 
@@ -35,7 +37,7 @@ foreach($ListAllGroups_cmd as $ListAllGroups_row){
 	$MyGroupsFull+=[$ListAllGroups_row['id']=>$GroupName]; 
 	}
 
-$MyPreviewMaxRows=Setting::Get('PreviewMaxRows', 'social_share'); 
+$MyPreviewMaxRows=$social_share->settings->get('PreviewMaxRows'); 
 if($MyPreviewMaxRows==''){$MyPreviewMaxRows=50; }
 ?>
 

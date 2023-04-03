@@ -43,6 +43,7 @@ class Module extends \humhub\components\Module
 	{
 		parent::enable();
 		
+		$social_share=Yii::$app->getModule('social_share'); 
 
 		if ($social_share->settings->get('theGroups') == '') {
 			$social_share->settings->set('theGroups', 0); 

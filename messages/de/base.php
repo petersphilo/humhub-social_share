@@ -26,3 +26,4 @@ return array (
 	'Submit'=>'Einreichen',
 	'Please provide a valid url'=>'Bitte geben Sie eine gültige URL an',
 	'xxxxxx'=>'xxxxxx',
+	); 
